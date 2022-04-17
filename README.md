@@ -1,0 +1,2 @@
+# TinyLittleInfinitesimalAffiliate
+Affiliate IO
