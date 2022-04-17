@@ -1,5 +1,29 @@
 {
+  "name": "affiliate",
+  "author": "William Qiao",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "description": "affiliate program",
+  "main": "index.js",
+  "keywords": [
+    "TypeScript",
+    "affiliate",
+    "walmartIO",
+    "bestbuyapi",
+    "javascript"
+  ],
+  "scripts": {
+    "client-install": "cd ./client && npm install",
+    "install": "npm install",
+    "compile": "tsc",
+    "server": "concurrently \"tsc\" \"cd ./server/dist && nodemon index.js\"",
+    "client": "cd ./client && npm start",
+    "start": "node ./server/dist/index.js",
+    "dev": "concurrently \"tsc\" \"npm run client\" \"npm run server\""
+  },
   "devDependencies": {
     "typescript": "^4.6.3"
-  }
+  },
+  "type": "module",
+  "module": "esnext"
 }
