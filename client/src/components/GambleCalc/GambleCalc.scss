@@ -1,0 +1,9 @@
+@use "../../index" as base;
+
+.GambleCalc-header{
+    @extend .base-bg;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    
+}

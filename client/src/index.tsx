@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './_index.scss';
+import { BrowserView, MobileOnlyView } from 'react-device-detect';
+import BillBoard from './components/BillBoard/BillBoard';
+import GambleCalc from './components/GambleCalc/GambleCalc';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
-    <App />
+    <MobileOnlyView>
+      <GambleCalc />
+    </MobileOnlyView>
+    <BrowserView>
+      <BillBoard />
+    </BrowserView>
   </React.StrictMode>
 );

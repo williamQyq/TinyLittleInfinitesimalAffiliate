@@ -1,0 +1,62 @@
+@use "../../index" as base;
+
+.BillBoard {
+    text-align: center;
+
+    .BillBoard-header {
+        @extend .noselect, .base-bg;
+
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(16px + 4vmin);
+        color: whitesmoke;
+
+        .logo {
+            font-size: 40vmin;
+        }
+    }
+}
+
+// /**
+//  * ----------------------------------------
+//  * animation rotate-scale-up
+//  * ----------------------------------------
+//  */
+// @-webkit-keyframes rotate-scale-up {
+//     0% {
+//         -webkit-transform: scale(1) rotateZ(0);
+//         transform: scale(1) rotateZ(0);
+//     }
+//     50% {
+//         -webkit-transform: scale(2) rotateZ(180deg);
+//         transform: scale(2) rotateZ(180deg);
+//     }
+//     100% {
+//         -webkit-transform: scale(1) rotateZ(360deg);
+//         transform: scale(1) rotateZ(360deg);
+//     }
+// }
+
+@keyframes rotate-scale-up {
+    0% {
+        -webkit-transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+    }
+    // 50% {
+    //     -webkit-transform: scale(1.5) rotateZ(180deg);
+    //     transform: scale(1.5) rotateZ(180deg);
+    // }
+    100% {
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+    }
+}
+
+.rotate {
+    animation-name: rotate-scale-up;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
