@@ -1,4 +1,4 @@
-import "../assets/BillBoard.scss";
+import "assets/BillBoard.scss";
 import React from 'react';
 import { SmileOutlined } from '@ant-design/icons';
 
