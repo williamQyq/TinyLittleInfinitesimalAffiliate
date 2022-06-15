@@ -1,6 +1,6 @@
-import "./GambleCalc.scss"
+import "../assets/GambleCalc.scss"
 import React from 'react';
-import SwipeActionBar from "../SwipeActionBar/SwipeActionBar";
+import { Button } from "antd";
 
 export interface IGambleCalcProps {
 }
@@ -19,7 +19,13 @@ export default class GambleCalc extends React.Component<IGambleCalcProps, IGambl
     public render() {
         return (
             <div className='GambleCalc-header'>
-                <SwipeActionBar />
+                <button className="pushable join-btn">
+                    <span className="shadow"></span>
+                    <span className="edge"></span>
+                    <span className="front">
+                        Let's Play
+                    </span>
+                </button>
             </div>
         );
     }

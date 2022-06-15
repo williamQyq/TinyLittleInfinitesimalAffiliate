@@ -1,0 +1,12 @@
+@use "./index.scss" as base;
+@use "./Home.scss" as home;
+
+.GambleCalc-header {
+    @extend .base-bg;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .join-btn{
+        margin: 4vmin;
+    }
+}
