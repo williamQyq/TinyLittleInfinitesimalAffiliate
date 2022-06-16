@@ -1,5 +1,5 @@
 @use "assets/pushable.scss";
-@use "assets/index.scss";
+@use "assets/index.scss" as base;
 // * {
 //   box-sizing: border-box;
 // }
@@ -8,7 +8,22 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  .svg-container {
+    position: absolute;
+    min-width: 100vw;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+    path {
+      fill: base.$green;
+    }
+  }
+
   .selector-area {
+    align-self: center;
     height: 50vh;
     color: whitesmoke;
   }

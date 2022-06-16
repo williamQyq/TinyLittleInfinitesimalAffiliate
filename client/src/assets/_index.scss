@@ -1,7 +1,13 @@
 $gradient-color-1: #b7f8db;
 $gradient-color-2: #50a7c2;
+$red: #ff4d4f;
+$blue: #40a9ff;
+$green: #73d13d;
+$black: #141414;
 
 body {
+  height: 100%;
+  position: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;

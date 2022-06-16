@@ -1,3 +1,5 @@
+@use "./index.scss" as base;
+
 .pushable {
   position: relative;
   border: none;
@@ -37,7 +39,7 @@
     border-radius: 12px;
     font-size: 1.25rem;
     color: white;
-    background: #7cb305;
+    background: base.$green;
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -78,4 +80,28 @@
 }
 .checkout-btn {
   @extend .join-btn;
+}
+
+.red {
+  .ant-slider-dot-active {
+    border-color: base.$red;
+  }
+}
+
+.blue {
+  .ant-slider-dot-active {
+    border-color: base.$blue;
+  }
+}
+
+.green {
+  .ant-slider-dot-active {
+    border-color: base.$green;
+  }
+}
+
+.black {
+  .ant-slider-dot-active {
+    border-color: base.$black;
+  }
 }
