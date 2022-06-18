@@ -1,7 +1,5 @@
 import { Carousel, Slider } from 'antd';
-import 'antd/dist/antd.css';
 import 'assets/SelectPlayerArea.scss';
-import { defaultPrefixCls } from 'antd/lib/config-provider';
 import React from 'react';
 import PlayerSelector from './PlayerSelector';
 
@@ -11,19 +9,6 @@ export interface ISelectPlayerAreaProps {
 export interface ISelectPlayerAreaStates {
     chipCounts: Map<ChipsType, number>;
 }
-const contentStyle: React.CSSProperties = {
-    height: '60vh',
-    width: "100vw",
-    marginLeft: "auto",
-    marginRight: "auto",
-    borderRadius: "0.5em",
-    color: '#fff',
-    lineHeight: '25em',
-    textAlign: 'center',
-    borderStyle: "solid",
-    // borderColor: "coral"
-    // background: '#364d79',
-};
 
 interface Player {
     name: string;
@@ -68,14 +53,6 @@ const marks = {
         label: <strong>10</strong>
     }
 }
-
-const style: React.CSSProperties = {
-    display: "inline-block",
-    height: 400,
-    marginLeft: 40,
-    borderColor: "red"
-}
-
 export default class SelectPlayerArea extends React.Component<ISelectPlayerAreaProps, ISelectPlayerAreaStates> {
     readonly valueMap: Map<ChipsType, ChipsValue> = new Map([
         [ChipsType.red, ChipsValue.red],
@@ -115,28 +92,31 @@ export default class SelectPlayerArea extends React.Component<ISelectPlayerAreaP
             value: this.valueMap
         }
         return (
-            <Carousel className='player-selector' style={contentStyle} afterChange={this.onChange} >
+            <Carousel afterChange={this.onChange} >
                 <div >
                     {/* <PlayerSelector /> */}
-                    <h4>Select player</h4>
+                    <div className="carousel-content" >
+                        <PlayerSelector />
+                    </div>
                 </div>
-                <div className="chips-slider">
-                    {
-                        Array.from(defaultPocket.count).map(([chipType, count]) => (
-
-                            <Slider
-                                className={chipType}
-                                trackStyle={{ backgroundColor: defaultPocket.color.get(chipType) }}
-                                handleStyle={{ borderColor: defaultPocket.color.get(chipType) }}
-                                min={0}
-                                max={10}
-                                style={style}
-                                vertical
-                                marks={marks}
-                                defaultValue={defaultPocket.count.get(chipType)}
-                            />
-                        ))
-                    }
+                <div>
+                    <div className='carousel-content'>
+                        {
+                            Array.from(defaultPocket.count).map(([chipType, count]) => (
+                                <Slider
+                                    className={`slider ${chipType}`}
+                                    trackStyle={{ backgroundColor: defaultPocket.color.get(chipType) }}
+                                    handleStyle={{ borderColor: defaultPocket.color.get(chipType) }}
+                                    min={0}
+                                    max={10}
+                                    // style={sliderStyle}
+                                    vertical
+                                    marks={marks}
+                                    defaultValue={defaultPocket.count.get(chipType)}
+                                />
+                            ))
+                        }
+                    </div>
                 </div>
             </Carousel >
         );
