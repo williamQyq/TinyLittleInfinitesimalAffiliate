@@ -113,9 +113,10 @@ export default class PlayerSelector extends React.Component<IPlayerSelectorProps
             element.classList.add(this.state.expandedClass);
             wrapper.classList.add(this.state.hasExpandedClass);
             this.setState({ isSectionOpened: !isSectionOpened });
+            this.setState({ selectedPlayer: player });
         }
     }
-    closeSection = (event: React.MouseEvent, player: Player) => {
+    closeSection = (event: React.MouseEvent) => {
         event.stopPropagation();
         const { isSectionOpened } = this.state;
         let element = event.currentTarget.parentElement as HTMLDivElement;
@@ -124,6 +125,7 @@ export default class PlayerSelector extends React.Component<IPlayerSelectorProps
             element.classList.remove(this.state.expandedClass);
             wrapper.classList.remove(this.state.hasExpandedClass);
             this.setState({ isSectionOpened: !isSectionOpened });
+            this.setState({ selectedPlayer: null });
         }
     }
 
@@ -136,7 +138,7 @@ export default class PlayerSelector extends React.Component<IPlayerSelectorProps
                         className="section"
                         onClick={(e) => this.openSection(e, player)}
                     >
-                        <div className='close-section' onClick={(e) => this.closeSection(e, player)}>&times;</div>
+                        <div className='close-section' onClick={(e) => this.closeSection(e)}>&times;</div>
                         <div className="demo-box">{player.name}</div>
                     </section>
                 ))
