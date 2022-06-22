@@ -4,6 +4,7 @@ import SelectPlayerArea from './SelectPlayerArea';
 import "assets/pushable.scss";
 
 export interface IGameMenuProps {
+    socketHandler: any;
 }
 
 export interface IGameMenuState {
