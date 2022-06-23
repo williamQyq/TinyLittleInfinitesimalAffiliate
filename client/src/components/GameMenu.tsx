@@ -27,7 +27,7 @@ export default class GameMenu extends React.Component<IGameMenuProps, IGameMenuS
         return (
             <>
                 <SelectPlayerArea />
-                <PushableBtn toPath="/gambleCalc" className="join-btn" text="Let's Play" />
+                <PushableBtn toPath="/gambleCalc" className="join-btn" text="Let's Play" handleClick={this.props.socketHandler.onConnect} />
             </>
         );
     }

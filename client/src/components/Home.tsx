@@ -34,7 +34,7 @@ export default class Home extends React.Component<IHomeProps, IHomeState> {
     socketHandler = {
         onSocketOpen: (playerName: String) => {
             this.setState({ isConnected: true });
-            this.socket?.send(JSON.stringify({ action: "setName", playerName }));
+            this.socket?.send(JSON.stringify({ action: "setPlayer", playerName }));
 
         },
         onSocketClose: () => {

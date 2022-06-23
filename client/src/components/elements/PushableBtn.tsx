@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 export interface IPushableBtnProps {
     className?: string,
     toPath: string,
-    text: string;
+    text: string,
+    handleClick?: () => void;
 }
 
 export default function PushableBtn(props: IPushableBtnProps) {
-    let { text, className, toPath } = props;
+    let { text, className, toPath, handleClick } = props;
     return (
-        <Link to={toPath}>
+        <Link to={toPath} onClick={handleClick}>
             <button className={`pushable ${className}`} >
                 <span className='shadow' />
                 <span className='edge' />
